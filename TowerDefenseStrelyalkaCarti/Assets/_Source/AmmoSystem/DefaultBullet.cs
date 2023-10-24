@@ -17,9 +17,9 @@ namespace AmmoSystem
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log("col");
             if ((destroyMask & (1 << other.gameObject.layer)) != 0)
             {
+                Debug.Log("col");
                 Destroy(gameObject);
             }
         }
