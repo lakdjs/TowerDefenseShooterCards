@@ -123,9 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   destroyTime: 2
-  destroyMask:
-    serializedVersion: 2
-    m_Bits: 832
   rb: {fileID: 7903086182703728785}
 --- !u!58 &6493865830373918935
 CircleCollider2D:
@@ -157,5 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TargetMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 768
-  damage: 10
+    m_Bits: 256
+  <DestroyMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 832
+  damage: 20

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 798407169283868653}
   - component: {fileID: -142194314645881460}
   - component: {fileID: 1559419740307007352}
+  - component: {fileID: 9028882116412438469}
   m_Layer: 3
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -138,7 +139,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   destroyTime: 2
-  destroyMask:
+  rb: {fileID: -142194314645881460}
+--- !u!114 &9028882116412438469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294044232007911965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc5c1c287aa6944b919c6553669d994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TargetMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 128
+  <DestroyMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 704
-  rb: {fileID: -142194314645881460}
+  damage: 33

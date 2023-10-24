@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 432586543121768101}
   - component: {fileID: 8188101705318539526}
   - component: {fileID: -8672821589015430883}
+  - component: {fileID: 481341965399303841}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -208,10 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cec79f8d5718734ba644a760d6c6870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TargetMask>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 256
-  <EnemyHealth>k__BackingField: 0
+  <EnemyHealth>k__BackingField: 100
   <Damage>k__BackingField: 0
   <MovementSpeed>k__BackingField: 1000
   <ShootCoolDown>k__BackingField: 2
@@ -256,6 +254,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5693b71de4ab3b74c9f68616cc375063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &481341965399303841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950566312947294566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f2a679537729b4c8ac77b66ee92380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4987435464119021077

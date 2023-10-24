@@ -14,14 +14,5 @@ namespace AmmoSystem
             rb.velocity = transform.up * speed;
             Destroy(gameObject,destroyTime);
         }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            //if ((destroyMask & (1 << other.gameObject.layer)) != 0)
-           // {
-           //     Debug.Log("col");
-            //    Destroy(gameObject);
-            //}
-        }
     }
 }

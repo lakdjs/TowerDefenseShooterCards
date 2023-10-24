@@ -7,7 +7,6 @@ namespace AmmoSystem
     {
         [SerializeField] protected float speed;
         [SerializeField] protected float destroyTime;
-        [SerializeField] protected LayerMask destroyMask;
         [SerializeField] protected Rigidbody2D rb;
         public abstract void Fly();
     }

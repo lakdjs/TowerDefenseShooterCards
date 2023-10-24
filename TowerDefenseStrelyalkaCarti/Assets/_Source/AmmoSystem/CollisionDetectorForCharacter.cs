@@ -1,16 +1,16 @@
-using System;
-using EnemySystem;
+using CharacterSystem;
 using Interfaces;
 using UnityEngine;
 
 namespace AmmoSystem
 {
-    public class CollisionDetectorForEnemy : MonoBehaviour
+    public class CollisionDetectorForCharacter : MonoBehaviour
     {
         [field: SerializeField] public LayerMask TargetMask { get; private set; }
         [field: SerializeField] public LayerMask DestroyMask { get; private set; }
+        
         [SerializeField] private float damage;
-        private Enemy _enemy;
+        private Character _character;
         private void Start()
         {
             //_enemy = GetComponent<Enemy>();
