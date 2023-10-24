@@ -1,4 +1,5 @@
 using CharacterSystem;
+using Core;
 using UnityEngine;
 
 namespace InputSystem
@@ -13,7 +14,12 @@ namespace InputSystem
         private const string Vertical = "Vertical";
         private Vector3 _mousePosition;
         private Vector3 _direction;
-        
+        private Game _game;
+
+        public void Construct(Game game)
+        {
+            _game = game;
+        }
         private void Awake()
         {
             _characterInvoker = new CharacterInvoker(character);
