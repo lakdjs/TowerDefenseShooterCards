@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace EnemySystem
@@ -5,7 +6,14 @@ namespace EnemySystem
     [RequireComponent(typeof(Rigidbody2D))]
     public class Enemy : MonoBehaviour
     {
-        
+        public EnemyList EnemyList { get; private set; }
+
+        private void Start()
+        {
+            EnemyList = FindObjectOfType<EnemyList>();
+            EnemyList.AddEnemyInList(this);
+        }
+
         [field: SerializeField] public float EnemyHealth { get; private set; }
         [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public float MovementSpeed { get; private set; }

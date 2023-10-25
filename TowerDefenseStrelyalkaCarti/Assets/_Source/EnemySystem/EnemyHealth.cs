@@ -20,6 +20,7 @@ namespace EnemySystem
             Debug.Log($"EnemyHealth {_health}");
             if (_health <= 0)
             {
+                _enemy.EnemyList.RemoveEnemyFromList(_enemy);
                 Destroy(gameObject);
             }
         }
