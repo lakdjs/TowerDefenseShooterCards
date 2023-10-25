@@ -13,7 +13,7 @@ public class ShopSystem : MonoBehaviour
     public GameObject[] cardPanelsGO;
     public Button[] purchaseButton;
 
-    public Transform deck;
+    public GameObject deck;
     // Start is called before the first frame update
     void Start()
     {
