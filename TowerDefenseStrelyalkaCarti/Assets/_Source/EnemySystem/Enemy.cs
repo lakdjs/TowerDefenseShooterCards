@@ -10,8 +10,9 @@ namespace EnemySystem
 
         private void Start()
         {
-            EnemyList = FindObjectOfType<EnemyList>();
-            EnemyList.AddEnemyInList(this);
+            EnemyList = FindFirstObjectByType<EnemyList>();
+            Debug.Log(EnemyList);
+            EnemyList.AddEnemyInList(gameObject.GetComponent<Enemy>());
         }
 
         [field: SerializeField] public float EnemyHealth { get; private set; }

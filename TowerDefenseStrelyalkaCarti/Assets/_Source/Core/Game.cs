@@ -14,7 +14,6 @@ namespace Core
 
         public void OnApplicationStart()
         {
-            _score.SetUpScore();
             Debug.Log("start");
         }
         public void OnApplicationExit()

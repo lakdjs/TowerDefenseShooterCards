@@ -7,7 +7,12 @@ namespace EnemySystem
 {
     public class EnemyList : MonoBehaviour
     {
-        public List<Enemy> Enemies { get; private set; }
+        public List<Enemy> Enemies { get; private set; } = new List<Enemy>();
+
+        private void Start()
+        {
+            //Enemies = new List<Enemy>();
+        }
 
         public void AddEnemyInList(Enemy enemy)
         {
