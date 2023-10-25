@@ -12,6 +12,8 @@ public class ShopSystem : MonoBehaviour
     public CardTemplate[] cardPanels;
     public GameObject[] cardPanelsGO;
     public Button[] purchaseButton;
+
+    public Transform deck;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,7 @@ public class ShopSystem : MonoBehaviour
         {
             coins = coins - SO[btnNo].cost;
             coinsTxt.text = "Coins: " + coins.ToString();
+            cardPanelsGO[btnNo].transform.parent = deck.transform;
             canPurchase();
         }
     }
