@@ -1,15 +1,26 @@
+using System;
 using EnemySystem;
 using UnityEngine;
 
 namespace TowerSystem
 {
+    [Serializable]
     public class Tower : MonoBehaviour
+
+    { 
+    public EnemyList EnemyList { get; private set; }
+    [field: SerializeField] public TowerTypes TowerType {get; private set;}
+    [field: SerializeField] public Sprite TowerIcon {get; private set;}
+    [field: SerializeField] public float TowerHealth { get; private set; }
+    [field: SerializeField] public float TowerRange { get; private set; }
+    [field: SerializeField] public float CoolDown { get; private set; }
+    [field: SerializeField] public int TowerCost { get; private set; }
+    [field: SerializeField] public GameObject Projectile { get; private set; }
+    [field: SerializeField] public Transform FirePoint { get; private set; }
+
+    private void Start()
     {
-        [field: SerializeField] public EnemyList EnemyList { get; private set; }
-        [field: SerializeField] public float TowerHealth { get; private set; }
-        [field: SerializeField] public float TowerRange { get; private set; }
-        [field: SerializeField] public float CoolDown { get; private set; }
-        [field: SerializeField] public GameObject Projectile { get; private set; }
-        [field: SerializeField] public Transform FirePoint { get; private set; }
+        EnemyList = FindFirstObjectByType<EnemyList>();
+    }
     }
 }

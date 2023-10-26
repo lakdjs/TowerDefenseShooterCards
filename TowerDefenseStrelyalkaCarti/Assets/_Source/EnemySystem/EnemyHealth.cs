@@ -1,3 +1,5 @@
+using System;
+using Core;
 using Interfaces;
 using UnityEngine;
 
@@ -7,9 +9,10 @@ namespace EnemySystem
     {
         private Enemy _enemy;
         private float _health;
-        
+        private Bootstrapper _bootstrapper;
         private void Start()
         {
+            _bootstrapper = FindFirstObjectByType<Bootstrapper>();
             _enemy = GetComponent<Enemy>();
             _health = _enemy.EnemyHealth;
         }
@@ -21,6 +24,7 @@ namespace EnemySystem
             if (_health <= 0)
             {
                 _enemy.EnemyList.RemoveEnemyFromList(_enemy);
+                _bootstrapper.Score.AddScore(_enemy.Gold);
                 Destroy(gameObject);
             }
         }

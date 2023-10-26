@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemyHealth>k__BackingField: 100
   <Damage>k__BackingField: 0
+  <Gold>k__BackingField: 10
   <MovementSpeed>k__BackingField: 1000
   <ShootCoolDown>k__BackingField: 2
   <Rb>k__BackingField: {fileID: 4516486190993695587}

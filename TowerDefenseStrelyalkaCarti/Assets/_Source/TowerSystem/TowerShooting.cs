@@ -27,35 +27,28 @@ namespace TowerSystem
 
         private void SetTargetEnemy()
         {
-            _attackCounter -= Time.deltaTime;
             if (_targetEnemy == null)
             {
                 Enemy nearestEnemy = GetNearestEnemy();
-                if (nearestEnemy != null &&
-                    Vector2.Distance(transform.position,
-                        nearestEnemy.transform.position)
-                    <= _tower.TowerRange)
+                if (nearestEnemy != null)
                 {
                     _targetEnemy = nearestEnemy;
                 }
             }
-            else
+
+            if (_targetEnemy != null &&
+                Vector2.Distance(transform.position,
+                    _targetEnemy.transform.position) >
+                _tower.TowerRange)
             {
-                if (_attackCounter <= 0)
-                {
-                    _isAttacking = true;
-                    _attackCounter = _tower.CoolDown;
-                }
-                else
-                {
-                    _isAttacking = false;
-                }
-                if (Vector2.Distance(transform.position,
-                        _targetEnemy.transform.position)
-                    > _tower.TowerRange)
-                {
-                    _targetEnemy = null;
-                }
+                _targetEnemy = null;
+            }
+
+            _attackCounter -= Time.deltaTime;
+            if (_attackCounter <= 0 && _targetEnemy != null)
+            {
+                _attackCounter = _tower.CoolDown;
+                Attacking();
             }
         }
 
@@ -69,16 +62,18 @@ namespace TowerSystem
 
         public void Attacking()
         {
-            _isAttacking = false;
-            GameObject newProjectile = Instantiate(_tower.Projectile,_tower.FirePoint);
-            if (_targetEnemy == null)
-            {
-                Destroy(newProjectile);
-            }
-            else
-            {
-               StartCoroutine(MoveProjectile(newProjectile));
-            }
+            GameObject newBullet = Instantiate(_tower.Projectile, _tower.FirePoint);
+            newBullet.GetComponent<Projectile>().SetTargetAndTower(_targetEnemy, this.GetComponent<Tower>()); 
+            //_isAttacking = false;
+            //GameObject newProjectile = Instantiate(_tower.Projectile,_tower.FirePoint);
+            //if (_targetEnemy == null)
+            //{
+            //    Destroy(newProjectile);
+            //}
+            //else
+            //{
+            //   StartCoroutine(MoveProjectile(newProjectile));
+            //}
         }
 
         IEnumerator MoveProjectile(GameObject projectile)
@@ -132,7 +127,7 @@ namespace TowerSystem
 
             foreach (Enemy enemy in GetEnemiesInRange())
             {
-                if (Vector2.Distance(transform.position, enemy.transform.position) <= smallestDistance)
+                if (Vector2.Distance(transform.position, enemy.transform.position) < smallestDistance)
                 {
                     smallestDistance = Vector2.Distance(transform.position, enemy.transform.position);
                     nearestEnemy = enemy;

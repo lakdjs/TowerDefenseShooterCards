@@ -11,12 +11,12 @@ namespace EnemySystem
         private void Start()
         {
             EnemyList = FindFirstObjectByType<EnemyList>();
-            Debug.Log(EnemyList);
-            EnemyList.AddEnemyInList(gameObject.GetComponent<Enemy>());
+            EnemyList.AddEnemyInList(this); //gameObject.GetComponent<Enemy>());
         }
-
+        
         [field: SerializeField] public float EnemyHealth { get; private set; }
         [field: SerializeField] public float Damage { get; private set; }
+        [field: SerializeField] public int Gold { get; private set; }
         [field: SerializeField] public float MovementSpeed { get; private set; }
         [field: SerializeField] public float ShootCoolDown { get; private set; }
         [field: SerializeField] public Rigidbody2D Rb { get; private set; }

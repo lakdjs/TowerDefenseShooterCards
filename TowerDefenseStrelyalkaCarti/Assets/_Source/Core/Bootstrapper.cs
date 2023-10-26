@@ -10,7 +10,8 @@ namespace Core
         [SerializeField] private InputListener inputListener;
         [SerializeField] private ScoreView scoreView;
         private Game _game;
-        private Score _score;
+        public Score Score { get; private set; }
+
         private void Awake()
         {
             Init();
@@ -23,10 +24,10 @@ namespace Core
 
         private void Init()
         {
-            _score = new Score();
-            _game = new Game(_score);
+            Score = new Score();
+            _game = new Game(Score);
             inputListener.Construct(_game);
-            scoreView.Construct(_score);
+            scoreView.Construct(Score);
         }
 
         private void StartGame()

@@ -24,9 +24,9 @@ namespace ScoreSystem
             OnScoreChange?.Invoke(ScoreValue);
         }
 
-        public void AddScore()
+        public void AddScore(int adding)
         {
-            ScoreValue += _addingScore;
+            ScoreValue += adding;
             OnScoreChange?.Invoke(ScoreValue);
         }
     }

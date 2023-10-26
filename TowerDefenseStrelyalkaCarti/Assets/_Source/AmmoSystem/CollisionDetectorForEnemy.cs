@@ -27,7 +27,6 @@ namespace AmmoSystem
                 Debug.Log("col");
                 Destroy(gameObject);
             }
-           
         }
     }
 }
