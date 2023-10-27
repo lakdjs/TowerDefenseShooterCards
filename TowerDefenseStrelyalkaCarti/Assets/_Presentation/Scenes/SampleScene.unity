@@ -475,7 +475,8 @@ GameObject:
   - component: {fileID: 200456313}
   - component: {fileID: 200456312}
   - component: {fileID: 200456311}
-  m_Layer: 0
+  - component: {fileID: 200456315}
+  m_Layer: 12
   m_Name: BuyPoint (3)
   m_TagString: BuildPoint
   m_Icon: {fileID: 0}
@@ -588,6 +589,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &200456315
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200456310}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &439968435
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439968435}
   m_LocalRotation: {x: -0, y: -0, z: 0.27617615, w: 0.9611071}
-  m_LocalPosition: {x: -11.17, y: -10.96, z: 0}
+  m_LocalPosition: {x: -13.08, y: -10.379999, z: 0}
   m_LocalScale: {x: 1, y: 5.5703, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1251,7 +1278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667178597}
   m_LocalRotation: {x: -0, y: -0, z: 0.9383839, w: 0.3455949}
-  m_LocalPosition: {x: 7.28, y: -11.46, z: 0}
+  m_LocalPosition: {x: 10.31, y: -10.79, z: 0}
   m_LocalScale: {x: 1, y: 5.5703, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1669,7 +1696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853392827}
   m_LocalRotation: {x: -0, y: -0, z: 0.039817996, w: 0.99920696}
-  m_LocalPosition: {x: -12.79, y: -6.07, z: 0}
+  m_LocalPosition: {x: -14.7, y: -5.49, z: 0}
   m_LocalScale: {x: 1, y: 5.5703, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1688,7 +1715,8 @@ GameObject:
   - component: {fileID: 859837327}
   - component: {fileID: 859837326}
   - component: {fileID: 859837325}
-  m_Layer: 0
+  - component: {fileID: 859837329}
+  m_Layer: 12
   m_Name: BuyPoint (2)
   m_TagString: BuildPoint
   m_Icon: {fileID: 0}
@@ -1801,6 +1829,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &859837329
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859837324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &875353349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,7 +2065,8 @@ GameObject:
   - component: {fileID: 1001280199}
   - component: {fileID: 1001280198}
   - component: {fileID: 1001280197}
-  m_Layer: 0
+  - component: {fileID: 1001280200}
+  m_Layer: 12
   m_Name: BuyPoint (1)
   m_TagString: BuildPoint
   m_Icon: {fileID: 0}
@@ -2124,6 +2179,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1001280200
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001280195}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1045735118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2217,8 @@ GameObject:
   - component: {fileID: 1045735120}
   - component: {fileID: 1045735122}
   - component: {fileID: 1045735123}
-  m_Layer: 0
+  - component: {fileID: 1045735124}
+  m_Layer: 12
   m_Name: BuyPoint
   m_TagString: BuildPoint
   m_Icon: {fileID: 0}
@@ -2249,6 +2331,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildButton: {fileID: 715137229}
+--- !u!61 &1045735124
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045735118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1108035231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2466,10 @@ PrefabInstance:
     - target: {fileID: 1950566312947294566, guid: ac34097f49626d047855f43db4664dcd, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516486190993695587, guid: ac34097f49626d047855f43db4664dcd, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9065070685074212860, guid: ac34097f49626d047855f43db4664dcd, type: 3}
       propertyPath: m_RootOrder
@@ -2776,6 +2888,10 @@ PrefabInstance:
     - target: {fileID: 1950566312947294566, guid: ac34097f49626d047855f43db4664dcd, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516486190993695587, guid: ac34097f49626d047855f43db4664dcd, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9065070685074212860, guid: ac34097f49626d047855f43db4664dcd, type: 3}
       propertyPath: m_RootOrder
@@ -3205,7 +3321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593486163}
   m_LocalRotation: {x: -0, y: -0, z: 0.993635, w: 0.112648234}
-  m_LocalPosition: {x: 9.592257, y: -6.8567424, z: 0}
+  m_LocalPosition: {x: 12.622257, y: -6.1867423, z: 0}
   m_LocalScale: {x: 1, y: 5.5703, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4054,7 +4170,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1998739819}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
