@@ -21,7 +21,7 @@ namespace TowerSystem
             Debug.Log($"Health {_health}");
             if (_health <= 0)
             {
-                _tower.EnemyList.StopAllEnemies();
+                //_tower.EnemyList.StopAllEnemies();
                 _tower.TowerList.RemoveTowerFromList(_tower);
                 Destroy(gameObject);
             }
