@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TargetMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4864
   <DestroyMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 832
+    m_Bits: 4928
   damage: 20

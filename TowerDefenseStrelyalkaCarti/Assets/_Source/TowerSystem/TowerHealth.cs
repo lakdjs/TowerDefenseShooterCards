@@ -1,4 +1,6 @@
+using EnemySystem;
 using Interfaces;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TowerSystem
@@ -7,7 +9,6 @@ namespace TowerSystem
     {
         private Tower _tower;
         private float _health;
-        
         private void Start()
         {
             _tower = GetComponent<Tower>();
@@ -18,6 +19,12 @@ namespace TowerSystem
         {
             _health -= damage;
             Debug.Log($"Health {_health}");
+            if (_health <= 0)
+            {
+                _tower.EnemyList.StopAllEnemies();
+                _tower.TowerList.RemoveTowerFromList(_tower);
+                Destroy(gameObject);
+            }
         }
         public void TakeDamage(float damage)
         {

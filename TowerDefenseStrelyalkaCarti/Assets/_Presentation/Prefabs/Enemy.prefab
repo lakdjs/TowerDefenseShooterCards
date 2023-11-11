@@ -212,7 +212,7 @@ MonoBehaviour:
   <EnemyHealth>k__BackingField: 100
   <Damage>k__BackingField: 0
   <Gold>k__BackingField: 10
-  <MovementSpeed>k__BackingField: 1000
+  <MovementSpeed>k__BackingField: 0.02
   <ShootCoolDown>k__BackingField: 2
   <Rb>k__BackingField: {fileID: 4516486190993695587}
   <BulletPrefab>k__BackingField: {fileID: 8137059262265302471, guid: e747873966804144e85d9f974faeb9c8, type: 3}

@@ -23,5 +23,13 @@ namespace EnemySystem
         {
             Enemies.Remove(enemy);
         }
+
+        public void StopAllEnemies()
+        {
+            foreach (var enemy in Enemies)
+            {
+                enemy.gameObject.GetComponent<EnemyAI>().enabled = false;   
+            }
+        }
     }
 }
