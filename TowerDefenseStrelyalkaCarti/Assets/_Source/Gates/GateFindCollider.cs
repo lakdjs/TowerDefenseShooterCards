@@ -5,30 +5,22 @@ using UnityEngine;
 public class GateFindCollider : MonoBehaviour
 {
     public GameObject gate;
+
+    private bool isOpened = true;
     // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Trigger();
-    }
-
-    public void Trigger()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (other.CompareTag("Character") && isOpened == true)
         {
-            if (gate.activeInHierarchy == false)
-            {
-                gate.SetActive(true);
-            }
-            else if (gate.activeInHierarchy == true)
-            {
-                gate.SetActive(false);
-            }
+            gate.SetActive(false);
+            isOpened = false;
+        }
+        else if (other.CompareTag("Character") && isOpened == false)
+        {
+            gate.SetActive(true);
+            isOpened = true;
         }
     }
 }
