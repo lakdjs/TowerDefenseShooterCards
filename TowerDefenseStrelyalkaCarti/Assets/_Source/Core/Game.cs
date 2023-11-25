@@ -14,11 +14,11 @@ namespace Core
 
         public void OnApplicationStart()
         {
-            Debug.Log("start");
+            //Debug.Log("start");
         }
         public void OnApplicationExit()
         {
-            Debug.Log("exit");
+            //Debug.Log("exit");
         }
     }
 }

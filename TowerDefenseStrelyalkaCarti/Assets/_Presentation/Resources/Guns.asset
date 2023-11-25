@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Guns
+  m_EditorClassIdentifier: Assembly-CSharp:GunSystem:GunsDataSO
+  <Guns>k__BackingField:
+  - <GunType>k__BackingField: 0
+    <BulletCapacity>k__BackingField: 20
+    <ShotCoolDown>k__BackingField: 1
+    <Damage>k__BackingField: 15
+    <BulletsQuantityPerShot>k__BackingField: 1
+  - <GunType>k__BackingField: 1
+    <BulletCapacity>k__BackingField: 25
+    <ShotCoolDown>k__BackingField: 0.5
+    <Damage>k__BackingField: 13
+    <BulletsQuantityPerShot>k__BackingField: 1
+  - <GunType>k__BackingField: 2
+    <BulletCapacity>k__BackingField: 9
+    <ShotCoolDown>k__BackingField: 3
+    <Damage>k__BackingField: 15
+    <BulletsQuantityPerShot>k__BackingField: 3
