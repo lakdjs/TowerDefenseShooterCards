@@ -5,17 +5,17 @@ namespace GunSystem
 {
     public class GunChange : MonoBehaviour
     {
-        public Action<GunTypes> OnGunChanged;
-        [SerializeField] private GunTypes gunType;
+        public event Action<GunTypes> OnGunChanged;
+        public GunTypes gunType;
         private int _bulletCapacity;
         private float _shotCoolDown;
         private float _damage;
         private int _bulletsQuantityPerShot;
 
-        private void Start()
-        {
-            ChangingGun(gunType);
-        }
+        //private void OnEnable()
+        //{
+        //    ChangingGun(gunType);
+        //}
 
         private void Update()
         {
@@ -32,6 +32,11 @@ namespace GunSystem
             if (Input.GetKeyDown(KeyCode.R))
             {
                 ChangingGun(GunTypes.rifle);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                ChangingGun(GunTypes.shotgun);
             }
         }
 

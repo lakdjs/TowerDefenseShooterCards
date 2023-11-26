@@ -2380,6 +2380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb44496f9ce9e447954e4306b2280ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunChange: {fileID: 1837671425}
+  character: {fileID: 1837671418}
+  characterRb: {fileID: 1837671419}
+  cameraMain: {fileID: 519420031}
   inputListener: {fileID: 1844976086}
   scoreView: {fileID: 1115453256}
 --- !u!4 &1504793238
@@ -3062,7 +3066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da0159000346314ca708d1747056970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunType: 2
+  gunType: 0
 --- !u!1 &1844976085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,9 +3096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41637c44d630c94a999f9189be0823a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 1837671418}
-  cameraMain: {fileID: 519420031}
-  characterRb: {fileID: 1837671419}
 --- !u!4 &1844976087
 Transform:
   m_ObjectHideFlags: 0
