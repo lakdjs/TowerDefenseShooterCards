@@ -1,4 +1,6 @@
+using Core;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TowerSystem
 {
@@ -6,6 +8,24 @@ namespace TowerSystem
     {
         [SerializeField] private GameObject buildButton;
         private GameObject _selectedBuildPoint;
+        [SerializeField] private Transform positionForTower;
+        [SerializeField] private GameObject towerPrefab;
+        [SerializeField] private Button butButton;
+        private Bootstrapper _bootstrapper;
+        private void Start()
+        {
+            _bootstrapper = FindFirstObjectByType<Bootstrapper>();
+        }
+
+        public void BuyingTower()
+        {
+            if (towerPrefab.GetComponent<Tower>().TowerCost <= _bootstrapper.Score.ScoreValue)
+            {
+                _bootstrapper.Score.AddScore(-towerPrefab.GetComponent<Tower>().TowerCost);
+                Instantiate(towerPrefab, positionForTower);
+                //Destroy(gameObject);
+            }
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -15,6 +35,7 @@ namespace TowerSystem
                 buildButton.SetActive(true);
                 buildButton.transform.position =
                     Camera.main.WorldToScreenPoint(_selectedBuildPoint.transform.position);
+                butButton.onClick.AddListener(BuyingTower);
             }
         }
 
@@ -24,6 +45,7 @@ namespace TowerSystem
             {
                 _selectedBuildPoint = null;
                 buildButton.SetActive(false);
+                butButton.onClick.RemoveListener(BuyingTower);
             }
         }
     }
