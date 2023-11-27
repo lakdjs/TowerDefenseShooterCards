@@ -237,7 +237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73003844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.84, z: -0.11550722}
+  m_LocalPosition: {x: 0, y: -17.82, z: -0.11550722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TowerType>k__BackingField: 0
   <TowerIcon>k__BackingField: {fileID: 0}
-  <TowerHealth>k__BackingField: 1000
+  <TowerHealth>k__BackingField: 100
   <TowerRange>k__BackingField: 5
   <CoolDown>k__BackingField: 3
   <TowerCost>k__BackingField: 0
@@ -2644,7 +2644,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108035231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.84, z: -0.11550722}
+  m_LocalPosition: {x: -15.52, y: -6.84, z: -0.11550722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4485,7 +4485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586904604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.84, z: -0.11550722}
+  m_LocalPosition: {x: 11.19, y: 0.03, z: -0.11550722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
