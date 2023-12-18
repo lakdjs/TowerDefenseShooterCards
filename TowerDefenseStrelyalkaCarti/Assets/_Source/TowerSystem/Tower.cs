@@ -21,9 +21,9 @@ namespace TowerSystem
 
     private void Start()
     {
-        TowerList = FindFirstObjectByType<TowerList>();
+        TowerList = FindObjectOfType<TowerList>();
         TowerList.AddTowerInList(this);
-        EnemyList = FindFirstObjectByType<EnemyList>();
+        EnemyList = FindObjectOfType<EnemyList>();
     }
     }
 }

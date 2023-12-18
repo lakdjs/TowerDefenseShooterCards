@@ -109,6 +109,7 @@ MonoBehaviour:
   <TowerCost>k__BackingField: 10
   <Projectile>k__BackingField: {fileID: 5227523929261509575, guid: a8812ef65a1b42d4a8f35ef00fcd783f, type: 3}
   <FirePoint>k__BackingField: {fileID: 7370151395623691944}
+  <TowerList>k__BackingField: {fileID: 0}
 --- !u!114 &6127334959580771874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6156760713707657398}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdd1134d62f69094587da24969292ca0, type: 3}
   m_Name: 
