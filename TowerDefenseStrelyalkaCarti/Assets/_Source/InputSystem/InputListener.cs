@@ -22,11 +22,12 @@ namespace InputSystem
             Character character,
             GunChange gunChange,
             Camera cameraMain,
-            Rigidbody2D characterRb)
+            Rigidbody2D characterRb,
+            CharacterInvoker characterInvoker)
         {
             _character = character;
             _game = game;
-            _characterInvoker = new CharacterInvoker(character, gunChange);
+            _characterInvoker = characterInvoker;
             _cameraMain = cameraMain;
             _characterRb = characterRb;
         }

@@ -20,7 +20,6 @@ namespace GunSystem
         private void Update()
         {
             Debug.Log(gunType);
-            Debug.Log($"capacity : {_bulletCapacity}");
             Debug.Log($"cooldown : {_shotCoolDown}");
             Debug.Log($"damage : {_damage}");
             Debug.Log($"quantity : {_bulletsQuantityPerShot}");
