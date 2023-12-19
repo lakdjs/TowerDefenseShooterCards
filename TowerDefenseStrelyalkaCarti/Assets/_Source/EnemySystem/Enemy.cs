@@ -6,6 +6,7 @@ namespace EnemySystem
     [RequireComponent(typeof(Rigidbody2D))]
     public class Enemy : MonoBehaviour
     {
+        public event Action<float> HpSetedUp;
         public EnemyList EnemyList { get; private set; }
 
         private void Start()
@@ -54,6 +55,7 @@ namespace EnemySystem
                 out _enemyGold,
                 out _enemySpeed,
                 out _enemyCoolDown);
+            HpSetedUp?.Invoke(_enemyHealth);
         }
     }
 }
