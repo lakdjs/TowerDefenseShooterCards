@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39cbd6a487ad0b419dcfa8674c2f7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   destroyTime: 2
   rb: {fileID: 4407941830627738222}
 --- !u!114 &-6776881918344634007
@@ -142,7 +142,7 @@ MonoBehaviour:
   <DestroyMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 192
-  damage: 33
+  damage: 35
 --- !u!58 &6977389985523754440
 CircleCollider2D:
   m_ObjectHideFlags: 0

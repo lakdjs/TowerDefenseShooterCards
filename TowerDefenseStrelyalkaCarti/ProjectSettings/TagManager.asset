@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BuildPoint
   - Character
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Projectile
   - EnemyBullet
   - Tower
-  - 
+  - Gates
   - 
   - 
   - 
