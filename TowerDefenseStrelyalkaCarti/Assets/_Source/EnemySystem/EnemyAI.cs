@@ -1,22 +1,48 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Interfaces;
 using TowerSystem;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace EnemySystem
 {
     public class EnemyAI : MonoBehaviour
     {
-        public event Action<bool> OnTargetArrived;
-        //public bool CanShoot { get; private set; } = false;
-        private Transform _tower;
+        public bool ReadyToShoot { get; private set; }
+        private List<Tower> _towers;
         private Enemy _enemy;
-        private void Awake()
+        private Transform _nearestTarget = null;
+        private float _smallestDistance;
+        private EnemyCombat _enemyCombat;
+        private void Start()
         {
             _enemy = GetComponent<Enemy>();
-            _tower = FindObjectOfType<Tower>().transform;
-            StartCoroutine(RollCoroutine((_tower.transform)));
+            _enemyCombat = GetComponent<EnemyCombat>();
+            ReadyToShoot = false;   
+        }
+
+        private void Update()
+        {
+            Move(_nearestTarget);
+        }
+
+        private void StartMoving()
+        {
+            _towers = null;
+            _towers = FindFirstObjectByType<TowerList>().Towers;
+            _smallestDistance = Mathf.Infinity;
+            for (int i = 0; i < _towers.Count; i++)
+            {
+                if (Vector2.Distance(_towers[i].transform.position, transform.position) < _smallestDistance)
+                {
+                    _nearestTarget = _towers[i].transform;
+                    _smallestDistance = Vector2.Distance(_towers[i].transform.position, transform.position);
+                }
+            }
+            Move(_nearestTarget);
         }
 
         private void FixedUpdate()
@@ -24,25 +50,57 @@ namespace EnemySystem
             LookAtTarget();
         }
 
-        IEnumerator RollCoroutine(Transform endPosition)
+        /*IEnumerator RollCoroutine(Transform endPosition)
         {
+            ReadyToShoot = false;
             float elapsedTime = 0f;
-            
-            while (Vector2.Distance(transform.position, endPosition.position) > 3.01f)
+
+            if (endPosition != null)
             {
-                elapsedTime += Time.deltaTime;
-                float t = Mathf.Clamp01(elapsedTime / _enemy.MovementSpeed);
-                transform.position = Vector2.Lerp(transform.position, _tower.transform.position, t);
-                yield return null;
+                while (Vector2.Distance(transform.position, endPosition.position) > 3.01f)
+                {
+                    elapsedTime += Time.deltaTime;
+                    float t = Mathf.Clamp01(elapsedTime / _enemy.MovementSpeed);
+                    transform.position = Vector2.Lerp(transform.position, endPosition.position, t);
+                    yield return null;
+                }
+                ReadyToShoot = true;
             }
-            OnTargetArrived?.Invoke(true);
+            
+        }
+*/
+        private void Move(Transform endPosition)
+        { 
+            if (_nearestTarget == null)
+            {
+                StartMoving();
+            }
+            else
+            {
+                if (Vector2.Distance(transform.position, endPosition.position) > 3.01f)
+                {
+                    ReadyToShoot = false;
+                    transform.position = Vector3.MoveTowards(transform.position, endPosition.position, _enemy.MovementSpeed);
+                }
+                else
+                {
+                    ReadyToShoot = true;
+                }
+            }
         }
         private void LookAtTarget()
         {
-           Vector2 direction = _tower.transform.position - transform.position;
-            direction.Normalize();
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            _enemy.Rb.rotation = angle;
+            if (_nearestTarget == null)
+            {
+                StartMoving();
+            }
+            else
+            {
+                Vector2 direction = _nearestTarget.position - transform.position;
+                direction.Normalize();
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                _enemy.Rb.rotation = angle;
+            }
         }
     }
 }

@@ -15,17 +15,24 @@ namespace EnemySystem
         {
             _enemy = GetComponent<Enemy>();
             _enemyAI = GetComponent<EnemyAI>();
-            _enemyAI.OnTargetArrived += Shooting;
         }
 
-        private void Shooting(bool isShooting)
+        private void Update()
         {
-            Shoot(_enemy.FirePoint,_enemy.BulletPrefab);
+            if (_enemyAI.ReadyToShoot)
+            {
+                Shoot(_enemy.FirePoint, _enemy.BulletPrefab);
+            }
+        }
+
+        private void Shooting(Transform firePoint, GameObject bulletPrefab)
+        {
+            StartCoroutine(attackShoot(firePoint, bulletPrefab));
         }
 
         public void Shoot(Transform firePoint, GameObject bulletPrefab)
         {
-            StartCoroutine(attackShoot(firePoint, bulletPrefab));
+            Shooting(firePoint, bulletPrefab);
         }
         IEnumerator attackShoot(Transform firePoint, GameObject bulletPrefab)
         {
@@ -36,7 +43,6 @@ namespace EnemySystem
                 yield return new WaitForSeconds(_enemy.ShootCoolDown);
                 _isShooting = false;
             }
-            Shooting(true);
         }
     }
 }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8881890601846182407}
   - component: {fileID: 3024278536411427987}
   - component: {fileID: 6127334959580771874}
+  - component: {fileID: 3956318037996824558}
+  - component: {fileID: -557855686397089288}
   m_Layer: 12
   m_Name: Tower
   m_TagString: Untagged
@@ -107,6 +109,7 @@ MonoBehaviour:
   <TowerCost>k__BackingField: 10
   <Projectile>k__BackingField: {fileID: 5227523929261509575, guid: a8812ef65a1b42d4a8f35ef00fcd783f, type: 3}
   <FirePoint>k__BackingField: {fileID: 7370151395623691944}
+  <TowerList>k__BackingField: {fileID: 0}
 --- !u!114 &6127334959580771874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +120,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdd1134d62f69094587da24969292ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &3956318037996824558
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156760713707657398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &-557855686397089288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156760713707657398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7241966623cd5cb4599eaf06f2ced304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8006311406037471249

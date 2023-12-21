@@ -14,9 +14,15 @@ namespace EnemySystem
         {
             _bootstrapper = FindFirstObjectByType<Bootstrapper>();
             _enemy = GetComponent<Enemy>();
+            _enemy.HpSetedUp += GetHp;
             _health = _enemy.EnemyHealth;
         }
 
+        private void GetHp(float hp)
+        {
+            _health = hp;
+            Debug.Log(_health);
+        }
         private void TakingDamage(float damage)
         {
             _health -= damage;

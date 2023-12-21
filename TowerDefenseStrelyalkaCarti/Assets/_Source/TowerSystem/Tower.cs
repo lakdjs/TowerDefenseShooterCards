@@ -17,10 +17,13 @@ namespace TowerSystem
     [field: SerializeField] public int TowerCost { get; private set; }
     [field: SerializeField] public GameObject Projectile { get; private set; }
     [field: SerializeField] public Transform FirePoint { get; private set; }
+    [field: SerializeField] public TowerList TowerList { get; private set; }
 
     private void Start()
     {
-        EnemyList = FindFirstObjectByType<EnemyList>();
+        TowerList = FindObjectOfType<TowerList>();
+        TowerList.AddTowerInList(this);
+        EnemyList = FindObjectOfType<EnemyList>();
     }
     }
 }

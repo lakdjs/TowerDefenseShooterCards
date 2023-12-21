@@ -5,7 +5,7 @@ namespace ScoreSystem
 {
     public class Score 
     {
-        public const int StartValue = 0;
+        public const int StartValue = 10;
         private const int EndValue = 0;
         
         private int _addingScore = 1;
