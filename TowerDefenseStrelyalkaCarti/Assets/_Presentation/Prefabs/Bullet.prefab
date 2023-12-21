@@ -157,5 +157,5 @@ MonoBehaviour:
     m_Bits: 768
   <DestroyMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 832
+    m_Bits: 9024
   damage: 20
