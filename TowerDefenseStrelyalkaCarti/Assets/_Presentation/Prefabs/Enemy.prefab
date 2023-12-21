@@ -197,7 +197,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!114 &-7529558961895663962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,11 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cec79f8d5718734ba644a760d6c6870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnemyHealth>k__BackingField: 100
-  <Damage>k__BackingField: 0
-  <Gold>k__BackingField: 10
-  <MovementSpeed>k__BackingField: 0.02
-  <ShootCoolDown>k__BackingField: 2
+  <EnemyTypes>k__BackingField: 0
   <Rb>k__BackingField: {fileID: 4516486190993695587}
   <BulletPrefab>k__BackingField: {fileID: 8137059262265302471, guid: e747873966804144e85d9f974faeb9c8, type: 3}
   <FirePoint>k__BackingField: {fileID: 1261246683226741583}
