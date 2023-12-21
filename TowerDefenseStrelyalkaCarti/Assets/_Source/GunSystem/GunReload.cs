@@ -65,21 +65,25 @@ namespace GunSystem
 
         if (bulletsQuantity > 0)
         {
-            AmmoCount += bulletsQuantity;
+            //AmmoCount += bulletsQuantity;
             PlayerPrefs.SetInt($"{currAmmoName}.ammoCount", AmmoCount);
         }
         else
         {
-            if (CurrAmmo <= 0 && !IsReloading)
+            if (CurrAmmo <= _gunChange.BulletQuantityPerShot && !IsReloading)
             {
+                CanShoot = false;
+                CurrAmmo += bulletsQuantity;
+                OnCurrAmmoChanged?.Invoke(CurrAmmo);
                 StartCoroutine(TimerToReload(_reloadSpeed));
                 Reload();
                 return;
             }
-
-            CurrAmmo += bulletsQuantity;
+            
+            //CurrAmmo += bulletsQuantity;
             PlayerPrefs.SetInt($"{currAmmoName}.currAmmo", CurrAmmo);
         }
+        CurrAmmo += bulletsQuantity;
         OnAmmoChanged?.Invoke(Ammo);
         OnAmmoCountChanged?.Invoke(AmmoCount);
         OnCurrAmmoChanged?.Invoke(CurrAmmo);

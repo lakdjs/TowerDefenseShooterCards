@@ -9,10 +9,10 @@ namespace GunSystem
         public GunTypes GunType { get; private set; } = GunTypes.pistol;
 
 
-        protected override void Shoot()
+        protected override void Shooting(Transform firePoint, GameObject bulletPrefab)
         {
+            GameObject.Instantiate(bulletPrefab,firePoint);
             Debug.Log("PistolShoot");
-
         }
     }
 }

@@ -12,6 +12,8 @@ namespace GunSystem
         private float _damage;
         private int _bulletsQuantityPerShot;
 
+        public int BulletQuantityPerShot => _bulletsQuantityPerShot;
+
         //private void OnEnable()
         //{
         //    ChangingGun(gunType);
@@ -19,7 +21,7 @@ namespace GunSystem
 
         private void Update()
         {
-            Debug.Log(gunType);
+            Debug.Log(_bulletsQuantityPerShot);
            // Debug.Log($"cooldown : {_shotCoolDown}");
            // Debug.Log($"damage : {_damage}");
            // Debug.Log($"quantity : {_bulletsQuantityPerShot}");

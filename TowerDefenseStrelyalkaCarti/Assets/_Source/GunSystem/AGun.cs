@@ -6,10 +6,10 @@ namespace GunSystem
 {
     public abstract class AGun : IShootable
     {
-        protected abstract void Shoot();
+        protected abstract void Shooting(Transform firePoint, GameObject bulletPrefab);
         public void Shoot(Transform firePoint, GameObject bulletPrefab)
         {
-            Shoot();
+            Shooting(firePoint, bulletPrefab);
         }
     }
 }
