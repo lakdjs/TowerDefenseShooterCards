@@ -30,8 +30,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        _enemiesLeftToSpawn = _waves[0].WaveSettings.Length;
-        LaunchWave();
+        if (_waves.Length > 0)
+        {
+            _enemiesLeftToSpawn = _waves[0].WaveSettings.Length;
+            LaunchWave();
+        }
     }
 
     private IEnumerator SpawnEnemyInWave()
