@@ -25,6 +25,7 @@ namespace CharacterSystem
 
         public void Shoot()
         {
+            Debug.Log(_shootable);
             _shootable.Shoot(_character.FirePoint,_character.BulletPrefab);
         }
     }

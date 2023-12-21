@@ -20,9 +20,9 @@ namespace GunSystem
         private void Update()
         {
             Debug.Log(gunType);
-            Debug.Log($"cooldown : {_shotCoolDown}");
-            Debug.Log($"damage : {_damage}");
-            Debug.Log($"quantity : {_bulletsQuantityPerShot}");
+           // Debug.Log($"cooldown : {_shotCoolDown}");
+           // Debug.Log($"damage : {_damage}");
+           // Debug.Log($"quantity : {_bulletsQuantityPerShot}");
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ChangingGun(GunTypes.pistol);

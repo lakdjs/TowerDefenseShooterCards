@@ -4,6 +4,7 @@ using GunSystem;
 using InputSystem;
 using ScoreSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core
 {
@@ -15,9 +16,9 @@ namespace Core
         [SerializeField] private Camera cameraMain;
         [SerializeField] private InputListener inputListener;
         [SerializeField] private ScoreView scoreView;
+        [SerializeField] private GunReload gunReload;
         private CharacterInvoker _characterInvoker;
         private CharacterShooting _characterShooting;
-        private GunReload _gunReload;
         private Game _game;
         public Score Score { get; private set; }
 
@@ -36,7 +37,7 @@ namespace Core
             PlayerPrefs.SetInt($"{GunTypes.pistol.ToString()}.ammoCount",100);
             PlayerPrefs.SetInt($"{GunTypes.pistol.ToString()}.currAmmo",10);
             PlayerPrefs.SetInt($"{GunTypes.pistol.ToString()}.ammo",10);
-            PlayerPrefs.SetInt($"{GunTypes.pistol.ToString()}.reloadSpeed",2);
+            PlayerPrefs.SetFloat($"{GunTypes.pistol.ToString()}.reloadSpeed",5);
             
 
             //Debug.Log(PlayerPrefs.GetInt($"{GunTypes.pistol.ToString()}.ammoCount"));
@@ -44,9 +45,9 @@ namespace Core
             //Debug.Log( PlayerPrefs.GetInt($"{GunTypes.pistol.ToString()}.ammo"));
             
             _characterShooting = new CharacterShooting(gunChange);
-            _gunReload = new GunReload(_characterShooting,gunChange);
-            _characterShooting.Construct(_gunReload);
-            _gunReload.Bind();
+            gunReload.Construct(_characterShooting,gunChange);
+            _characterShooting.Construct(gunReload);
+            gunReload.Bind();
             _characterInvoker = new CharacterInvoker(character, gunChange,_characterShooting);
             Score = new Score();
             _game = new Game(Score);
