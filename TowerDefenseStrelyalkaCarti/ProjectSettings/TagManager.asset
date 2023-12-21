@@ -8,6 +8,7 @@ TagManager:
   - Character
   - Spawner
   - Enemy
+  - Throne
   layers:
   - Default
   - TransparentFX

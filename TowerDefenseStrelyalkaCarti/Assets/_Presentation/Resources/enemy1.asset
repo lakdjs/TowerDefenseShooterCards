@@ -17,7 +17,7 @@ MonoBehaviour:
     <EnemyHealth>k__BackingField: 100
     <Damage>k__BackingField: 10
     <Gold>k__BackingField: 3
-    <MovementSpeed>k__BackingField: 0
+    <MovementSpeed>k__BackingField: 0.1
     <ShootCoolDown>k__BackingField: 1
   - <EnemyTypes>k__BackingField: 1
     <EnemyHealth>k__BackingField: 200
@@ -29,5 +29,5 @@ MonoBehaviour:
     <EnemyHealth>k__BackingField: 300
     <Damage>k__BackingField: 10
     <Gold>k__BackingField: 50
-    <MovementSpeed>k__BackingField: 0
+    <MovementSpeed>k__BackingField: 0.1
     <ShootCoolDown>k__BackingField: 5

@@ -21,6 +21,11 @@ namespace TowerSystem
             Debug.Log($"Health {_health}");
             if (_health <= 0)
             {
+                if (transform.tag == "Throne")
+                {
+                    _health = 100;
+                    return;
+                }
                 //_tower.EnemyList.StopAllEnemies();
                 _tower.TowerList.RemoveTowerFromList(_tower);
                 Destroy(gameObject);

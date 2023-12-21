@@ -1620,7 +1620,7 @@ GameObject:
   - component: {fileID: 552275842}
   m_Layer: 12
   m_Name: Throne
-  m_TagString: Untagged
+  m_TagString: Throne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3047,7 +3047,7 @@ GameObject:
   - component: {fileID: 780243326}
   - component: {fileID: 780243329}
   - component: {fileID: 780243328}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5982,7 +5982,7 @@ GameObject:
   - component: {fileID: 1387148859}
   - component: {fileID: 1387148858}
   - component: {fileID: 1387148857}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallSquare (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
