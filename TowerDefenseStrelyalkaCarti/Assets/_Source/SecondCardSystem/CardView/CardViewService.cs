@@ -1,4 +1,4 @@
-using SecondCardSystem.AllCards;
+using SecondCardSystem.AllTypesOfCards;
 using SecondCardSystem.CardData;
 using UnityEngine;
 

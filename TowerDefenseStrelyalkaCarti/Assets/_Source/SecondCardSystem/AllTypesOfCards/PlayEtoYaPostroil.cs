@@ -1,7 +1,7 @@
 using SecondCardSystem.CardData;
 using UnityEngine;
 
-namespace SecondCardSystem.AllCards
+namespace SecondCardSystem.AllTypesOfCards
 {
     public class PlayEtoYaPostroil : APlayCard
     {

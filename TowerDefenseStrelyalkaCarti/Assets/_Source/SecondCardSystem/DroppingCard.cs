@@ -13,8 +13,7 @@ namespace SecondCardSystem
 
             if (card)
             {
-                //OnCardPlayed?.Invoke(true);
-                card.PlayThisCard(true);
+                card.PlayThisCard();
                 card.defParent = transform;
                 Destroy(card.gameObject);
             }

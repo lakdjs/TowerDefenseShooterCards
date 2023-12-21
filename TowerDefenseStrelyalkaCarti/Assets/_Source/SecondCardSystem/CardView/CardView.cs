@@ -30,6 +30,7 @@ namespace SecondCardSystem.CardView
                 cardNameText.text = cardName;
                 cardCostText.text = _cardCost.ToString();
             }
+            AllCards.Cards.Add(this);
         }
     }
 }

@@ -17,16 +17,10 @@ namespace SecondCardSystem
         {
             _cardView = GetComponent<CardView.CardView>();
             _droppingCard = FindObjectOfType<DroppingCard>(); 
-            Bind();
             _cameraMain = Camera.main;
         }
 
-        private void Bind()
-        {
-            _droppingCard.OnCardPlayed += PlayThisCard;
-        }
-
-        public void PlayThisCard(bool a)
+        public void PlayThisCard()
         {
             _cardView.APlayCard.PlayCard();
         }
