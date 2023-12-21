@@ -2760,6 +2760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb44496f9ce9e447954e4306b2280ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunChange: {fileID: 1837671425}
+  character: {fileID: 1837671418}
+  characterRb: {fileID: 1837671419}
+  cameraMain: {fileID: 519420031}
   inputListener: {fileID: 1844976086}
   scoreView: {fileID: 1115453256}
 --- !u!4 &1504793238
@@ -3302,6 +3306,7 @@ GameObject:
   - component: {fileID: 1837671422}
   - component: {fileID: 1837671423}
   - component: {fileID: 1837671424}
+  - component: {fileID: 1837671425}
   m_Layer: 8
   m_Name: Character
   m_TagString: Character
@@ -3323,8 +3328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <enemyMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 128
-  <PlayerHealth>k__BackingField: 100
+    m_Bits: 0
+  <PlayerHealth>k__BackingField: 0
   <MovementSpeed>k__BackingField: 10
   <Rb>k__BackingField: {fileID: 1837671419}
   <BulletPrefab>k__BackingField: {fileID: 294044232007911965, guid: ae5eba67451bec54090934a3f381e088, type: 3}
@@ -3460,6 +3465,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f201f3cd61b024da6cfe7bf982f57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1837671425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837671417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da0159000346314ca708d1747056970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunType: 0
 --- !u!1 &1844976085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3489,9 +3507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41637c44d630c94a999f9189be0823a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 1837671418}
-  cameraMain: {fileID: 519420031}
-  characterRb: {fileID: 1837671419}
 --- !u!4 &1844976087
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using System;
 using Core;
+using GunSystem;
 using Interfaces;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace EnemySystem
@@ -26,7 +28,7 @@ namespace EnemySystem
         private void TakingDamage(float damage)
         {
             _health -= damage;
-            Debug.Log($"EnemyHealth {_health}");
+            //Debug.Log($"EnemyHealth {_health}");
             if (_health <= 0)
             {
                 _enemy.EnemyList.RemoveEnemyFromList(_enemy);

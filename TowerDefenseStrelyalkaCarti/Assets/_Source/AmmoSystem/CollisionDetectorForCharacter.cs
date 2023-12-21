@@ -22,9 +22,9 @@ namespace AmmoSystem
                 if ((TargetMask & (1 << other.gameObject.layer)) != 0)
                 {
                     other.gameObject.GetComponent<IDamageble>().TakeDamage(damage);
-                    Debug.Log("target");
+                    //Debug.Log("target");
                 }
-                Debug.Log("col");
+                // Debug.Log("col");
                 Destroy(gameObject);
             }
            

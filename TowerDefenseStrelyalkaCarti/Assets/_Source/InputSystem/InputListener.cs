@@ -1,14 +1,16 @@
 using CharacterSystem;
 using Core;
+using GunSystem;
 using UnityEngine;
 
 namespace InputSystem
 {
     public class InputListener : MonoBehaviour
-    {
-        [SerializeField] private Character character;
-        [SerializeField] private Camera cameraMain;
-        [SerializeField] private Rigidbody2D characterRb;
+    {   
+        private Character _character; 
+        private Camera _cameraMain;
+        private Rigidbody2D _characterRb; 
+        private GunChange _gunChange;
         private CharacterInvoker _characterInvoker;
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";
@@ -16,13 +18,22 @@ namespace InputSystem
         private Vector3 _direction;
         private Game _game;
 
-        public void Construct(Game game)
+        public void Construct(Game game,
+            Character character,
+            GunChange gunChange,
+            Camera cameraMain,
+            Rigidbody2D characterRb,
+            CharacterInvoker characterInvoker)
         {
+            _character = character;
             _game = game;
+            _characterInvoker = characterInvoker;
+            _cameraMain = cameraMain;
+            _characterRb = characterRb;
         }
         private void Awake()
         {
-            _characterInvoker = new CharacterInvoker(character);
+            
         }
 
         private void Update()
@@ -45,7 +56,7 @@ namespace InputSystem
         }
         private void ReadShoot()
         {
-            if (Input.GetKeyDown(character.MouseButton))
+            if (Input.GetKeyDown(_character.MouseButton))
             {
                 _characterInvoker.Shoot();
             }
@@ -53,11 +64,11 @@ namespace InputSystem
         
         private void LookAtPoint()
         {
-            _mousePosition = cameraMain.ScreenToWorldPoint(Input.mousePosition);
-            _direction = _mousePosition - character.gameObject.transform.position;
+            _mousePosition = _cameraMain.ScreenToWorldPoint(Input.mousePosition);
+            _direction = _mousePosition - _character.gameObject.transform.position;
             _direction.Normalize();
             float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-            characterRb.rotation = angle;
+            _characterRb.rotation = angle;
         }
     }
 }
