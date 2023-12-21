@@ -9,12 +9,15 @@ namespace GunSystem
     public class GunReload: MonoBehaviour
 
     {
+        public event Action<int> OnAmmoChanged; 
+        public event Action<int> OnAmmoCountChanged; 
+        public event Action<int> OnCurrAmmoChanged; 
     public bool CanShoot { get; private set; } = true;
     private GunChange _gunChange;
     private CharacterShooting _characterShooting;
-    private int _ammoCount; //обойма
-    private int _currAmmo; //в новом оружии
-    private int _ammo; //в 1ой обойме
+    public int AmmoCount { get; private set; } //обойма
+    public int CurrAmmo { get; private set; } //в новом оружии
+    public int Ammo { get; private set; } //в 1ой обойме
     private float _reloadSpeed;
     private float _reloadTimer = 0.0f;
     private bool IsReloading = false;
@@ -34,23 +37,26 @@ namespace GunSystem
     private void SetUpAmmos(GunTypes gunTypes)
     {
         string currAmmoName = _gunChange.gunType.ToString();
-        _ammoCount = PlayerPrefs.GetInt($"{currAmmoName}.ammoCount");
-        _currAmmo = PlayerPrefs.GetInt($"{currAmmoName}.currAmmo");
-        _ammo = PlayerPrefs.GetInt($"{currAmmoName}.ammo");
+        AmmoCount = PlayerPrefs.GetInt($"{currAmmoName}.ammoCount");
+        CurrAmmo = PlayerPrefs.GetInt($"{currAmmoName}.currAmmo");
+        Ammo = PlayerPrefs.GetInt($"{currAmmoName}.ammo");
         _reloadSpeed = PlayerPrefs.GetFloat($"{currAmmoName}.reloadSpeed");
 
-        Debug.Log($"_ammoCount{_ammoCount}");
-        Debug.Log($"_currAmmo{_currAmmo}");
-        Debug.Log($"_ammo{_ammo}");
+        //Debug.Log($"_ammoCount{_ammoCount}");
+        //Debug.Log($"_currAmmo{_currAmmo}");
+        //Debug.Log($"_ammo{_ammo}");
 
-        if (_currAmmo <= 0)
+        if (CurrAmmo <= 0)
         {
             CanShoot = false;
-            if (_ammoCount > 0)
+            if (AmmoCount > 0)
             {
                 Reload();
             }
         }
+        OnAmmoChanged?.Invoke(Ammo);
+        OnAmmoCountChanged?.Invoke(AmmoCount);
+        OnCurrAmmoChanged?.Invoke(CurrAmmo);
     }
 
     private void GetOrSpendAmmos(int bulletsQuantity)
@@ -59,24 +65,26 @@ namespace GunSystem
 
         if (bulletsQuantity > 0)
         {
-            _ammoCount += bulletsQuantity;
-            PlayerPrefs.SetInt($"{currAmmoName}.ammoCount", _ammoCount);
+            AmmoCount += bulletsQuantity;
+            PlayerPrefs.SetInt($"{currAmmoName}.ammoCount", AmmoCount);
         }
         else
         {
-            if (_currAmmo <= 1 && !IsReloading)
+            if (CurrAmmo <= 0 && !IsReloading)
             {
                 StartCoroutine(TimerToReload(_reloadSpeed));
                 Reload();
                 return;
             }
 
-            _currAmmo += bulletsQuantity;
-            PlayerPrefs.SetInt($"{currAmmoName}.currAmmo", _currAmmo);
+            CurrAmmo += bulletsQuantity;
+            PlayerPrefs.SetInt($"{currAmmoName}.currAmmo", CurrAmmo);
         }
-
-        Debug.Log($"_ammoCount{_ammoCount}");
-        Debug.Log($"_currAmmo{_currAmmo}");
+        OnAmmoChanged?.Invoke(Ammo);
+        OnAmmoCountChanged?.Invoke(AmmoCount);
+        OnCurrAmmoChanged?.Invoke(CurrAmmo);
+        //Debug.Log($"_ammoCount{_ammoCount}"); 
+        //Debug.Log($"_currAmmo{_currAmmo}");
         //Debug.Log($"_ammo{_ammo}");
     }
 
@@ -97,26 +105,29 @@ namespace GunSystem
         
         string currAmmoName = _gunChange.gunType.ToString();
         CanShoot = false;
-        if (_ammoCount > 0)
+        if (AmmoCount > 0)
         {
-            if (_ammoCount < _ammo)
+            if (AmmoCount < Ammo)
             {
-                _currAmmo = _ammoCount;
-                _ammoCount -= _currAmmo;
+                CurrAmmo = AmmoCount;
+                AmmoCount -= CurrAmmo;
             }
             else
             {
-                _currAmmo = _ammo;
-                _ammoCount -= _currAmmo;
+                CurrAmmo = Ammo;
+                AmmoCount -= CurrAmmo;
             }
 
-            PlayerPrefs.SetInt($"{currAmmoName}.currAmmo", _currAmmo);
-            PlayerPrefs.SetInt($"{currAmmoName}.ammoCount", _ammoCount);
+            //PlayerPrefs.SetInt($"{currAmmoName}.currAmmo", _currAmmo);
+            //PlayerPrefs.SetInt($"{currAmmoName}.ammoCount", _ammoCount);
 
             CanShoot = true;
         }
 
         Debug.Log("RELOADED");
+        OnAmmoChanged?.Invoke(Ammo);
+        OnAmmoCountChanged?.Invoke(AmmoCount);
+        OnCurrAmmoChanged?.Invoke(CurrAmmo);
     }
     }
 }
