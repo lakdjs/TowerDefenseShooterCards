@@ -17,6 +17,7 @@ namespace EnemySystem
         private Transform _nearestTarget = null;
         private float _smallestDistance;
         private EnemyCombat _enemyCombat;
+        private float _curSpeed;
         private void Start()
         {
             _enemy = GetComponent<Enemy>();
@@ -34,6 +35,7 @@ namespace EnemySystem
             _towers = null;
             _towers = FindFirstObjectByType<TowerList>().Towers;
             _smallestDistance = Mathf.Infinity;
+            _curSpeed = _enemy.MovementSpeed;
             for (int i = 0; i < _towers.Count; i++)
             {
                 if (Vector2.Distance(_towers[i].transform.position, transform.position) < _smallestDistance)
@@ -80,7 +82,7 @@ namespace EnemySystem
                 if (Vector2.Distance(transform.position, endPosition.position) > 3.01f)
                 {
                     ReadyToShoot = false;
-                    transform.position = Vector3.MoveTowards(transform.position, endPosition.position, _enemy.MovementSpeed);
+                    transform.position = Vector3.MoveTowards(transform.position, endPosition.position, _curSpeed);
                 }
                 else
                 {
@@ -101,6 +103,25 @@ namespace EnemySystem
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 _enemy.Rb.rotation = angle;
             }
+        }
+
+        public void ChangeMovementSpeedForTime(float timeForBuff, float movementFactor)
+        {
+            StartCoroutine(TimerForChangingSpeed(timeForBuff, movementFactor));
+        }
+
+        private IEnumerator TimerForChangingSpeed(float time, float speedFactor)
+        {
+            float latestSpeed = _curSpeed;
+            _curSpeed *= speedFactor;
+            float timerTime = time;
+            while (timerTime > 0)
+            {
+                yield return new WaitForSeconds(1);
+                timerTime--;
+            }
+
+            _curSpeed = latestSpeed;
         }
     }
 }
