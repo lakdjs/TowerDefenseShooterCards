@@ -13,9 +13,9 @@ namespace SecondCardSystem.AllTypesOfCards
         protected override void PlayingCard()
         {
             _enemyList = MonoBehaviour.FindObjectOfType<EnemyList>();
-            foreach (var enemy in _enemyList.Enemies)
+            for (int i = 0; i < _enemyList.Enemies.Count; i++)
             {
-                enemy.GetComponent<IAoeDamageble>().TakeAoeDamage(10,3);
+                _enemyList.Enemies[i].GetComponent<IAoeDamageble>().TakeAoeDamage(10,3);
             }
             Debug.Log("VOnuchka");
         }

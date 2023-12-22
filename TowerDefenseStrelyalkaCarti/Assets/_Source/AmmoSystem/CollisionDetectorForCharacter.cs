@@ -1,4 +1,5 @@
 using CharacterSystem;
+using GunSystem;
 using Interfaces;
 using UnityEngine;
 
@@ -10,9 +11,20 @@ namespace AmmoSystem
         [field: SerializeField] public LayerMask DestroyMask { get; private set; }
         
         [SerializeField] private float damage;
+        private GunChange _gunChange;
         private Character _character;
+        private GunsDataSO _gunDataSo; 
         private void Start()
         {
+            _gunDataSo = Resources.Load("Guns") as GunsDataSO;
+            _gunChange = FindObjectOfType<GunChange>();
+            foreach (var gun in _gunDataSo.Guns)
+            {
+                if(_gunChange.gunType == gun.GunType)
+                {
+                    damage = gun.Damage;
+                }
+            }
             //_enemy = GetComponent<Enemy>();
         }
         private void OnCollisionEnter2D(Collision2D other)
@@ -27,7 +39,11 @@ namespace AmmoSystem
                 // Debug.Log("col");
                 Destroy(gameObject);
             }
-           
+        }
+        
+        public void ChangeDamage(float damageToChange)
+        {
+            damage = damageToChange;
         }
     }
 }

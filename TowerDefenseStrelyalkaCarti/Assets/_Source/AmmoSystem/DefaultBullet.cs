@@ -14,5 +14,10 @@ namespace AmmoSystem
             rb.velocity = transform.up * speed;
             Destroy(gameObject,destroyTime);
         }
+
+        public override void ChangeDamage(float damage)
+        {
+            
+        }
     }
 }

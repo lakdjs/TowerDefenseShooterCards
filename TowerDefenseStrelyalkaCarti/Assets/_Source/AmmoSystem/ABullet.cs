@@ -9,6 +9,7 @@ namespace AmmoSystem
         [SerializeField] protected float destroyTime;
         [SerializeField] protected Rigidbody2D rb;
         public abstract void Fly();
+        public abstract void ChangeDamage(float damage);
     }
 }
 

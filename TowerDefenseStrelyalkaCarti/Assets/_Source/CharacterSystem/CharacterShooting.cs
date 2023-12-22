@@ -14,7 +14,7 @@ namespace CharacterSystem
            private GunTypes _gunTypes;
            private GunsDataSO _gunsDataSo = Resources.Load("Guns") as GunsDataSO;
            private int _bulletsPerShot;
-           
+           private float _damage;
            public CharacterShooting(GunChange gunChange)
            {
                _gunChange = gunChange;
@@ -48,6 +48,7 @@ namespace CharacterSystem
                    if (gun.GunType == _gunTypes)
                    {
                        _bulletsPerShot = gun.BulletsQuantityPerShot;
+                       _damage = gun.Damage;
                    }
                }
            }
@@ -59,7 +60,6 @@ namespace CharacterSystem
                    OnShooten?.Invoke(-_bulletsPerShot);
                }
            }
-           
            public void Shoot(Transform firePoint, GameObject bulletPrefab)
            {
                Shooting(firePoint,bulletPrefab);

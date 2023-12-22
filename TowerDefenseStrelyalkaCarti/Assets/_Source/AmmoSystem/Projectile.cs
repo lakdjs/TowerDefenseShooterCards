@@ -32,6 +32,11 @@ namespace AmmoSystem
             }
         }
 
+        public override void ChangeDamage(float damage)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SetTargetAndTower(Enemy target, Tower tower)
         {
             _tower = tower;
