@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Core;
 using GunSystem;
+using HealthView;
 using Interfaces;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,8 +11,10 @@ namespace EnemySystem
 {
     public class EnemyHealth : MonoBehaviour, IDamageble, IAoeDamageble
     {
+        [SerializeField] private HealthBarView healthBarView;
         private Enemy _enemy;
         private float _health;
+        private float _maxHealth;
         private Bootstrapper _bootstrapper;
         private void Start()
         {
@@ -19,17 +22,20 @@ namespace EnemySystem
             _enemy = GetComponent<Enemy>();
             _enemy.HpSetedUp += GetHp;
             _health = _enemy.EnemyHealth;
+            _maxHealth = _health;
         }
 
         private void GetHp(float hp)
         {
             _health = hp;
+            healthBarView.UpdateHealthBar(_health, _maxHealth);
             Debug.Log(_health);
         }
         private void TakingDamage(float damage)
         {
             _health -= damage;
-            Debug.Log($"EnemyHealth {_health}");
+            healthBarView.UpdateHealthBar(_health, _maxHealth);
+           // Debug.Log($"EnemyHealth {_health}");
             if (_health <= 0)
             {
                 _enemy.EnemyList.RemoveEnemyFromList(_enemy);

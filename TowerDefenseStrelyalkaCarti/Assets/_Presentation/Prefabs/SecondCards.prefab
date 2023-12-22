@@ -25,8 +25,8 @@ RectTransform:
   m_GameObject: {fileID: 6997692863726285212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.24, y: 1.24, z: 1.24}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6997692864798994381}
   - {fileID: 6997692864877603955}
@@ -364,6 +364,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
@@ -564,6 +568,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
@@ -764,6 +772,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
@@ -964,6 +976,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
@@ -1164,6 +1180,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
@@ -1364,6 +1384,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
@@ -1564,6 +1588,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
@@ -1764,6 +1792,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 35.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5373940074730231267, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 6997692864798994381}
     - target: {fileID: 5735105923511345691, guid: 5ec033f92647b434d889b7e9d0a930d9, type: 3}
       propertyPath: m_Name
       value: CardCost
