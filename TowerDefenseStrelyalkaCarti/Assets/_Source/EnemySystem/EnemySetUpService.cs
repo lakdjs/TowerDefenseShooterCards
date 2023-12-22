@@ -6,7 +6,7 @@ namespace EnemySystem
     {
         private static EnemySetUpService instance;
         private EnemyDataSO _enemyDataSo = 
-        Resources.Load("enemy1") as EnemyDataSO;
+        Resources.Load("Enemies") as EnemyDataSO;
         
         public static EnemySetUpService Instance
         {

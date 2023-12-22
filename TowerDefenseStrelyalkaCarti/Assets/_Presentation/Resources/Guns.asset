@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Guns 1
+  m_Name: Guns
   m_EditorClassIdentifier: Assembly-CSharp:GunSystem:GunsDataSO
   <Guns>k__BackingField:
   - <GunType>k__BackingField: 0
-    <BulletCapacity>k__BackingField: 0
-    <ShotCoolDown>k__BackingField: 0
-    <Damage>k__BackingField: 0
+    <BulletCapacity>k__BackingField: 10
+    <ShotCoolDown>k__BackingField: 2
+    <Damage>k__BackingField: 24
     <BulletsQuantityPerShot>k__BackingField: 1
   - <GunType>k__BackingField: 1
-    <BulletCapacity>k__BackingField: 0
-    <ShotCoolDown>k__BackingField: 0
-    <Damage>k__BackingField: 0
+    <BulletCapacity>k__BackingField: 20
+    <ShotCoolDown>k__BackingField: 1
+    <Damage>k__BackingField: 33
     <BulletsQuantityPerShot>k__BackingField: 1
   - <GunType>k__BackingField: 2
-    <BulletCapacity>k__BackingField: 0
-    <ShotCoolDown>k__BackingField: 0
-    <Damage>k__BackingField: 0
+    <BulletCapacity>k__BackingField: 6
+    <ShotCoolDown>k__BackingField: 4
+    <Damage>k__BackingField: 15
     <BulletsQuantityPerShot>k__BackingField: 3
