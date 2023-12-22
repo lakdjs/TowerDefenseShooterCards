@@ -26,5 +26,5 @@ MonoBehaviour:
   - <GunType>k__BackingField: 2
     <BulletCapacity>k__BackingField: 6
     <ShotCoolDown>k__BackingField: 3
-    <Damage>k__BackingField: 35
+    <Damage>k__BackingField: 40
     <BulletsQuantityPerShot>k__BackingField: 3

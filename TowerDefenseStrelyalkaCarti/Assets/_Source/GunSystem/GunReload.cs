@@ -21,7 +21,7 @@ namespace GunSystem
     private float _reloadSpeed;
     private float _reloadTimer = 0.0f;
     private bool IsReloading = false;
-
+    private bool IsEternal = false;
     public void Construct(CharacterShooting characterShooting, GunChange gunChange)
     {
         _characterShooting = characterShooting;
@@ -61,35 +61,39 @@ namespace GunSystem
 
     private void GetOrSpendAmmos(int bulletsQuantity)
     {
-        string currAmmoName = _gunChange.gunType.ToString();
+        if (IsEternal == false)
+        {
+            string currAmmoName = _gunChange.gunType.ToString();
 
-        if (bulletsQuantity > 0)
-        {
-            //AmmoCount += bulletsQuantity;
-            PlayerPrefs.SetInt($"{currAmmoName}.ammoCount", AmmoCount);
-        }
-        else
-        {
-            if (CurrAmmo <= _gunChange.BulletQuantityPerShot && !IsReloading)
+            if (bulletsQuantity > 0)
             {
-                CanShoot = false;
-                CurrAmmo += bulletsQuantity;
-                OnCurrAmmoChanged?.Invoke(CurrAmmo);
-                StartCoroutine(TimerToReload(_reloadSpeed));
-                Reload();
-                return;
+                //AmmoCount += bulletsQuantity;
+                PlayerPrefs.SetInt($"{currAmmoName}.ammoCount", AmmoCount);
             }
+            else
+            {
+                if (CurrAmmo <= _gunChange.BulletQuantityPerShot && !IsReloading)
+                {
+                    CanShoot = false;
+                    CurrAmmo += bulletsQuantity;
+                    OnCurrAmmoChanged?.Invoke(CurrAmmo);
+                    StartCoroutine(TimerToReload(_reloadSpeed));
+                    Reload();
+                    return;
+                }
             
-            //CurrAmmo += bulletsQuantity;
-            PlayerPrefs.SetInt($"{currAmmoName}.currAmmo", CurrAmmo);
+                //CurrAmmo += bulletsQuantity;
+                PlayerPrefs.SetInt($"{currAmmoName}.currAmmo", CurrAmmo);
+            }
+            CurrAmmo += bulletsQuantity;
+            OnAmmoChanged?.Invoke(Ammo);
+            OnAmmoCountChanged?.Invoke(AmmoCount);
+            OnCurrAmmoChanged?.Invoke(CurrAmmo);
+            //Debug.Log($"_ammoCount{_ammoCount}"); 
+            //Debug.Log($"_currAmmo{_currAmmo}");
+            //Debug.Log($"_ammo{_ammo}");
         }
-        CurrAmmo += bulletsQuantity;
-        OnAmmoChanged?.Invoke(Ammo);
-        OnAmmoCountChanged?.Invoke(AmmoCount);
-        OnCurrAmmoChanged?.Invoke(CurrAmmo);
-        //Debug.Log($"_ammoCount{_ammoCount}"); 
-        //Debug.Log($"_currAmmo{_currAmmo}");
-        //Debug.Log($"_ammo{_ammo}");
+        
     }
 
     private void Reload()
@@ -97,6 +101,40 @@ namespace GunSystem
         
     }
 
+    public void EternalBullets(float time)
+    {
+        StartCoroutine(TimerToEternalBullets(time));
+        OnAmmoChanged?.Invoke(Ammo);
+        OnAmmoCountChanged?.Invoke(AmmoCount);
+        OnCurrAmmoChanged?.Invoke(CurrAmmo);
+    }
+
+    IEnumerator TimerToEternalBullets(float time)
+    {
+        string currAmmoName = _gunChange.gunType.ToString();
+        int latestAmmo = PlayerPrefs.GetInt($"{currAmmoName}.ammo");
+        int latestAmmoCount = PlayerPrefs.GetInt($"{currAmmoName}.ammoCount");;
+        int latestCurrAmmo =  PlayerPrefs.GetInt($"{currAmmoName}.currAmmo");
+
+        Ammo = 777;
+        AmmoCount = 777;
+        CurrAmmo = 777;
+        IsEternal = true;
+        float timer = time;
+        while (timer > 0)
+        {
+            yield return new WaitForSeconds(1);
+            timer --;
+        }
+
+        Ammo = latestAmmo;
+        AmmoCount = latestAmmoCount;
+        CurrAmmo = latestCurrAmmo;
+        OnAmmoChanged?.Invoke(Ammo);
+        OnAmmoCountChanged?.Invoke(AmmoCount);
+        OnCurrAmmoChanged?.Invoke(CurrAmmo);
+        IsEternal = false;
+    }
     IEnumerator TimerToReload(float time)
     {
         CanShoot = false;
