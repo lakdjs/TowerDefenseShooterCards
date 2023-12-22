@@ -6,16 +6,11 @@ namespace TowerSystem
     [RequireComponent(typeof(Image))]
     public class TowerView : MonoBehaviour
     {
-        [SerializeField] private TowerTypes towerType;
-        private Image _icon;
+        [field: SerializeField] public TowerTypes TowerType { get; private set; }
+
         private void Start()
         {
-            _icon = GetComponent<Image>();
-            if (TowerViewService.Instance.GetTowerIcon(towerType,
-                    out Sprite processIcon))
-            {
-                _icon.sprite = processIcon;
-            }
+           
         }
     }
 }

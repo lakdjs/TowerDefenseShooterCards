@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3751048973941666015}
   - component: {fileID: 4407941830627738222}
   - component: {fileID: -4292979841958427150}
-  - component: {fileID: -6776881918344634007}
   - component: {fileID: 6977389985523754440}
+  - component: {fileID: 495899270118766944}
   m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.047169805, g: 0.04338732, b: 0.04338732, a: 1}
   m_FlipX: 0
@@ -124,25 +124,6 @@ MonoBehaviour:
   speed: 20
   destroyTime: 2
   rb: {fileID: 4407941830627738222}
---- !u!114 &-6776881918344634007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5227523929261509575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc5c1c287aa6944b919c6553669d994, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <TargetMask>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 128
-  <DestroyMask>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 8384
-  damage: 35
 --- !u!58 &6977389985523754440
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,3 +140,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &495899270118766944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227523929261509575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cc160878fc6a642892fa0e270b465b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TargetMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 128
+  <DestroyMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 192
+  damage: 33

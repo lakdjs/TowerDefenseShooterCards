@@ -63,7 +63,9 @@ namespace TowerSystem
         public void Attacking()
         {
             GameObject newBullet = Instantiate(_tower.Projectile, _tower.FirePoint);
-            newBullet.GetComponent<Projectile>().SetTargetAndTower(_targetEnemy, this.GetComponent<Tower>()); 
+            Projectile projectile = newBullet.GetComponent<Projectile>();
+            projectile.SetTargetAndTower(_targetEnemy, this.GetComponent<Tower>()); 
+            projectile.GetComponent<CollisionDetectorForProjectile>().ChangeDamage(_tower.Damage);
             //_isAttacking = false;
             //GameObject newProjectile = Instantiate(_tower.Projectile,_tower.FirePoint);
             //if (_targetEnemy == null)

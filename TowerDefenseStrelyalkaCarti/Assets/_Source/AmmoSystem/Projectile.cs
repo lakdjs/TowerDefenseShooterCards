@@ -8,8 +8,10 @@ namespace AmmoSystem
 {
     public class Projectile : ABullet
     {
+        private TowerSO _towerSo;
         private Enemy _target;
         private Tower _tower;
+        
 
         private void Update()
         {
@@ -34,7 +36,7 @@ namespace AmmoSystem
 
         public override void ChangeDamage(float damage)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void SetTargetAndTower(Enemy target, Tower tower)

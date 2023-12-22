@@ -10,7 +10,7 @@ namespace TowerSystem
         private GameObject _selectedBuildPoint;
         [SerializeField] private Transform positionForTower;
         [SerializeField] private GameObject towerPrefab;
-        [SerializeField] private Button butButton;
+        [SerializeField] private Button buyButton;
         private Bootstrapper _bootstrapper;
         private void Start()
         {
@@ -21,8 +21,9 @@ namespace TowerSystem
         {
             if (towerPrefab.GetComponent<Tower>().TowerCost <= _bootstrapper.Score.ScoreValue)
             {
-                _bootstrapper.Score.AddScore(-towerPrefab.GetComponent<Tower>().TowerCost);
-                Instantiate(towerPrefab, positionForTower);
+                _bootstrapper.Score.AddScore(towerPrefab.GetComponent<Tower>().TowerCost);
+               GameObject tower = Instantiate(towerPrefab, positionForTower);
+               tower.GetComponent<Tower>().Init(buyButton.GetComponent<TowerView>().TowerType);
                 //Destroy(gameObject);
             }
         }
@@ -35,7 +36,7 @@ namespace TowerSystem
                 buildButton.SetActive(true);
                 buildButton.transform.position =
                     Camera.main.WorldToScreenPoint(_selectedBuildPoint.transform.position);
-                butButton.onClick.AddListener(BuyingTower);
+                buyButton.onClick.AddListener(BuyingTower);
             }
         }
 
@@ -45,7 +46,7 @@ namespace TowerSystem
             {
                 _selectedBuildPoint = null;
                 buildButton.SetActive(false);
-                butButton.onClick.RemoveListener(BuyingTower);
+                buyButton.onClick.RemoveListener(BuyingTower);
             }
         }
     }

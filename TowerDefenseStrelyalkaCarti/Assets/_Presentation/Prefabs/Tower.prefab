@@ -77,8 +77,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.3301887, g: 0.14484692, b: 0.14484692, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3024278536411427987
@@ -103,13 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TowerType>k__BackingField: 0
   <TowerIcon>k__BackingField: {fileID: 0}
-  <TowerHealth>k__BackingField: 0
-  <TowerRange>k__BackingField: 10
-  <CoolDown>k__BackingField: 2
-  <TowerCost>k__BackingField: 10
   <Projectile>k__BackingField: {fileID: 5227523929261509575, guid: a8812ef65a1b42d4a8f35ef00fcd783f, type: 3}
   <FirePoint>k__BackingField: {fileID: 7370151395623691944}
-  <TowerList>k__BackingField: {fileID: 0}
 --- !u!114 &6127334959580771874
 MonoBehaviour:
   m_ObjectHideFlags: 0
