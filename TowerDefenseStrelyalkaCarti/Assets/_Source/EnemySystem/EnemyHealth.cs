@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Core;
 using GunSystem;
 using Interfaces;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace EnemySystem
 {
-    public class EnemyHealth : MonoBehaviour, IDamageble
+    public class EnemyHealth : MonoBehaviour, IDamageble, IAoeDamageble
     {
         private Enemy _enemy;
         private float _health;
@@ -28,7 +29,7 @@ namespace EnemySystem
         private void TakingDamage(float damage)
         {
             _health -= damage;
-            //Debug.Log($"EnemyHealth {_health}");
+            Debug.Log($"EnemyHealth {_health}");
             if (_health <= 0)
             {
                 _enemy.EnemyList.RemoveEnemyFromList(_enemy);
@@ -36,9 +37,30 @@ namespace EnemySystem
                 Destroy(gameObject);
             }
         }
+
+        private void TakingAoeDamage(float damagePerSecond, float time)
+        {
+            StartCoroutine(TimerForAoeDamage(time, damagePerSecond));
+        }
+
+        IEnumerator TimerForAoeDamage(float time, float damage)
+        {
+            float timerTime = time;
+            while (timerTime > 0)
+            {
+                yield return new WaitForSeconds(1);
+                timerTime--;
+                TakeDamage(damage);
+            }
+        }
         public void TakeDamage(float damage)
         {
             TakingDamage(damage);
+        }
+
+        public void TakeAoeDamage(float damage, float time)
+        {
+            TakingAoeDamage(damage, time);
         }
     }
 }

@@ -22,10 +22,11 @@ namespace TowerSystem
             {
                 if (transform.tag == "Throne")
                 {
-                    _health = 100;
-                    return;
+                    _tower.EnemyList.StopAllEnemies();
+                    //_health = 100;
+                    //return;
                 }
-                //_tower.EnemyList.StopAllEnemies();
+               
                 _tower.TowerList.RemoveTowerFromList(_tower);
                 Destroy(gameObject);
             }

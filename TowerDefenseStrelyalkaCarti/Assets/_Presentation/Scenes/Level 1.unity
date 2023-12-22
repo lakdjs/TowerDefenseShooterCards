@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TowerType>k__BackingField: 0
   <TowerIcon>k__BackingField: {fileID: 0}
-  <TowerHealth>k__BackingField: 100
+  <TowerHealth>k__BackingField: 1000
   <TowerRange>k__BackingField: 5
   <CoolDown>k__BackingField: 3
   <TowerCost>k__BackingField: 0
