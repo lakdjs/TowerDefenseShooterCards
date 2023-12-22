@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Interfaces;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -29,6 +30,7 @@ namespace EnemySystem
             foreach (var enemy in Enemies)
             {
                 enemy.gameObject.GetComponent<EnemyAI>().enabled = false;   
+                enemy.gameObject.GetComponent<EnemyCombat>().enabled = false;   
             }
         }
     }

@@ -1,21 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerManager : MonoBehaviour
+namespace EnemySystem
 {
-    private EnemySpawner _waveSpawner;
-
-    private void Awake()
+    public class SpawnerManager : MonoBehaviour
     {
-        _waveSpawner = GameObject.Find("Spawner Parent").GetComponent<EnemySpawner>();
-    }
+        private EnemySpawner _waveSpawner;
 
-    private void OnDestroy()
-    {
-        int enemiesLeft = 0;
-        enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (enemiesLeft == 0)
-            _waveSpawner.LaunchWave();
+        private void Awake()
+        {
+            _waveSpawner = GameObject.Find("Spawner Parent").GetComponent<EnemySpawner>();
+        }
+
+        private void OnDestroy()
+        {
+            int enemiesLeft = 0;
+            enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            if (enemiesLeft == 0)
+                _waveSpawner.LaunchWave();
+        }
     }
 }
